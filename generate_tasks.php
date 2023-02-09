@@ -36,8 +36,6 @@ try {
             $value4 = $value;
         case 5:
             $value5 = $value;
-        default:
-            $value1 = $value;
     }
     $z++;
   
