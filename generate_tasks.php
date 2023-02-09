@@ -45,8 +45,8 @@ try {
   $stmt->bindParam(':value1', $value1);
   $stmt->bindParam(':value2', $value2);
   $stmt->bindParam(':value3', $value3);
-  $stmt->bindParam(':value4', $value3);
-  $stmt->bindParam(':value5', $value3);
+  $stmt->bindParam(':value4', $value4);
+  $stmt->bindParam(':value5', $value5);
   // Execute the query
   $stmt->execute();
   echo "New record created successfully";
