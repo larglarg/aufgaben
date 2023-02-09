@@ -100,7 +100,7 @@ function generateLevel1Task($dif_lvl, $roundintern) {
     foreach ($sequence as $sigle){
         fwrite($myfile, $sigle."\n");
     }
-    $sequence_string = implode("|", $sequence);
+    $sequence_string = implode("A", $sequence);
     fwrite($myfile, $sequence_string."\n");
     $solution = end($sequence);
     if ($y % 2 == 0) {
@@ -111,7 +111,7 @@ function generateLevel1Task($dif_lvl, $roundintern) {
     }
     fwrite($myfile, $additional_solution."\n");
     fwrite($myfile, $sequence_string."\n");
-    return array($sequence_string, $additional_solution, $dif_lvl, $operation1, $operation2);
+    return array($sequence_string."A?A", $additional_solution, $dif_lvl, $operation1, $operation2);
     fclose($myfile);
 }
 
