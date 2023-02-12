@@ -13,16 +13,16 @@ $conn = new PDO("mysql:host=localhost;dbname=aufgaben", "root", "");
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 if ($difficulty_level>3){
     $difficulty_level= 1;
-    generator($conn, $difficulty_level, $i, $max_operationszahl, $min_operationszahl, $max_Start_Zahl, $min_Start_Zahl, $max_ergebniss, $min_ergebniss);
+    generator($conn, $difficulty_level, $number_of_tasks, $max_operationszahl, $min_operationszahl, $max_Start_Zahl, $min_Start_Zahl, $max_ergebniss, $min_ergebniss);
     $difficulty_level= 2;
-    generator($conn, $difficulty_level, $i, $max_operationszahl, $min_operationszahl, $max_Start_Zahl, $min_Start_Zahl, $max_ergebniss, $min_ergebniss);
+    generator($conn, $difficulty_level, $number_of_tasks, $max_operationszahl, $min_operationszahl, $max_Start_Zahl, $min_Start_Zahl, $max_ergebniss, $min_ergebniss);
     $difficulty_level= 3;
 }
-generator($conn, $difficulty_level, $i, $max_operationszahl, $min_operationszahl, $max_Start_Zahl, $min_Start_Zahl, $max_ergebniss, $min_ergebniss);
+generator($conn, $difficulty_level, $number_of_tasks, $max_operationszahl, $min_operationszahl, $max_Start_Zahl, $min_Start_Zahl, $max_ergebniss, $min_ergebniss);
 $conn = null;
 
-function generator($conn, $difficulty_level, $i, $max_operationszahl, $min_operationszahl, $max_Start_Zahl, $min_Start_Zahl, $max_ergebniss, $min_ergebniss){
-for ($i = 0; $i < $number_of_tasks; $i++) {
+function generator($conn, $difficulty_level, $number_of_tasks, $max_operationszahl, $min_operationszahl, $max_Start_Zahl, $min_Start_Zahl, $max_ergebniss, $min_ergebniss){
+for ($i = 0; $i < $number_of_tasks ; $i++) {
     // Erzeuge eine neue Aufgabe je nach Schwierigkeitsgrad
     $task = generateTask($difficulty_level, $i, $max_operationszahl, $min_operationszahl, $max_Start_Zahl, $min_Start_Zahl, $max_ergebniss, $min_ergebniss);
 
@@ -288,23 +288,45 @@ function switch_lvl3($number, $verlche_version_vom_lvl, $length, $operation1, $o
     $sequence = array();
     array_push($sequence, $number);
     if($verlche_version_vom_lvl == 3){
-        $verlche_version_vom_lvl = $verlche_version_vom_lvl - rand(1, 2);
+        $verlche_version_vom_lvl = $verlche_version_vom_lvl - rand(1, 4);
     }
     switch ($verlche_version_vom_lvl) {
         case 1:
             for ($i = $length; $i > 0; $i--) {
             $operation2++;
-            $number = $number * $operation1 * $operation2;
+            $number = $number + $operation1 * $operation2;
             array_push($sequence, $number);
         }
-            break;
+        break;
         case 2:
             for ($i = $length; $i > 0; $i--) {
                 $operation2++;
-                $number = $number * pow($operation1, $operation2);
+                $number = $number + pow($operation1, $operation2);
                 array_push($sequence, $number);
             }
-            break;
+        break;
+        case 3:
+            for ($i = $length; $i > 0; $i--) {
+                if ($operation2 >10 && $Length = $i){
+                    $operation2 = rand(1, 10);
+                }
+                $number = $number * $operation1;
+                $operation1 = $operation1 + $operation2;
+                
+                array_push($sequence, $number);
+            }
+        break;
+        case 4:
+            for ($i = $length; $i > 0; $i--) {
+                if ($operation2 >10 && $Length = $i){
+                    $operation2 = rand(1, 10);
+                }
+                $number = $number / $operation1;
+                $operation1 = $operation1 + $operation2;
+                
+                array_push($sequence, $number);
+            }
+        break;
     }
     
     $return_array= array($sequence, $number);
