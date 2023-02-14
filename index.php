@@ -76,7 +76,7 @@
 
 <div class="rectangle">
     <div class="background" style="background-image: url('image2.jpg');"></div>
-    <p>Text 2</p>
+    <a href="einmaleins.php"><p>1x1</p></a>
 </div>
 
 </body>
