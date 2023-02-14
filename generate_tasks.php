@@ -79,9 +79,13 @@ function generateLevel1Task($difficulty_level, $round, $max_operationszahl, $min
         }
         array_push($sequence, $number);
     }
+    if ($i % 2 == 0) {
+        $additional_solution = $number + $operation1;
+    } else {
+        $additional_solution = $number + $operation2;
+    }
     $sequence_string = implode("|", $sequence);
     $solution = end($sequence);
-    $additional_solution = $solution + (($length % 2 == 0) ? $operation1 : $operation2);
     if ($additional_solution> $max_ergebniss){
         return generateLevel1Task($difficulty_level, $round, $max_operationszahl, $min_operationszahl, $max_Start_Zahl, $min_Start_Zahl, $max_ergebniss, $min_ergebniss);
     }elseif($additional_solution< $min_ergebniss){
@@ -104,37 +108,39 @@ function generateLevel2Task($difficulty_level, $round, $max_operationszahl, $min
 
     if ($gleich_unterschiedlich == 1){
         $operation1 = $operation2;
+        $mal_oder_geteilt_gemischt = rand(1,2);
     }
-    $length = rand(4, 6);
+    $length = rand(4, 8);
     if ($operation1 == 0) {
         $operation1 = 1;
     }
     if ($operation2 == 0) {
         $operation2 = 1;
     }
+    //damit die die lösung generiert wird
+    $length++;
     if($mal_oder_geteilt_gemischt == 1){
         $after_switch = switch_multi($number, $verlche_version_vom_lvl, $length, $operation1, $operation2);
         $number = $after_switch[1];
-        $length = 1;
-        $additional_solution_array = switch_multi($number, $verlche_version_vom_lvl, $length, $operation1, $operation2);
     } elseif ($mal_oder_geteilt_gemischt == 2) {
         $after_switch = switch_dif($number, $verlche_version_vom_lvl, $length, $operation1, $operation2);
         $number = $after_switch[1];
-        $length = 1;
-        $additional_solution_array = switch_dif($number, $verlche_version_vom_lvl, $length, $operation1, $operation2);
     } else {
         $after_switch = switch_misch($number, $verlche_version_vom_lvl, $length, $operation1, $operation2);
         $number = $after_switch[1];
-        $length = 1;
-        $additional_solution_array = switch_misch($number, $verlche_version_vom_lvl, $length, $operation1, $operation2);
     }
+    
     $sequence = $after_switch[0];
+    //letztes elemnt vom array trennen und als $additional_solution speichern;
+    $additional_solution = array_pop($sequence);
+
     $sequence_string = implode("|", $sequence);
-    $additional_solution = $after_switch[1];
     if ($additional_solution> $max_ergebniss){
         return generateLevel2Task($difficulty_level, $round, $max_operationszahl, $min_operationszahl, $max_Start_Zahl, $min_Start_Zahl, $max_ergebniss, $min_ergebniss);
     }
     elseif($additional_solution< $min_ergebniss){
+        return generateLevel2Task($difficulty_level, $round, $max_operationszahl, $min_operationszahl, $max_Start_Zahl, $min_Start_Zahl, $max_ergebniss, $min_ergebniss);
+    }elseif(decimalPlaces($additional_solution)> 3){
         return generateLevel2Task($difficulty_level, $round, $max_operationszahl, $min_operationszahl, $max_Start_Zahl, $min_Start_Zahl, $max_ergebniss, $min_ergebniss);
     }
     return array($sequence_string."|?|", $additional_solution, $difficulty_level, $operation1, $operation2);
@@ -333,6 +339,12 @@ function switch_lvl3($number, $verlche_version_vom_lvl, $length, $operation1, $o
     return $return_array;
 
 }
+function decimalPlaces($number) {
+    $str = strval($number);
+    $pos = strrpos($number, '.');
+    return ($pos===false ? 0 : strlen($str)-$pos-1);
+}
+
 
 ?>
 <html>
