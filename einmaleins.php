@@ -35,6 +35,6 @@
 			}
 		}
 	?>
-	<button onclick="window.location.reload()">Nächste Aufgabe</button>
+	<p><button onclick="window.location.reload()">Nächste Aufgabe</button></p>
 </body>
 </html>
