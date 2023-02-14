@@ -43,7 +43,7 @@
 	<h1>	<title>Aufgabe des levels <?php echo $selected?>:</title> </h1>
 
 		<label for="">antwort:</label>
-		<input type="number" name="antwort" id="antwort" required>
+		<input type="number" name="antwort" id="antwort" step="0.001" required>
         <input type="hidden" name="selected" value="<?php echo $selected?>" />
         <input type="hidden" name="id" value="<?php echo $sql['id'];?>" />
         <input type="hidden" name="is_rand" value="<?php echo $is_rand?>" />
