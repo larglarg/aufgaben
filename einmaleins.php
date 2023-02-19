@@ -92,7 +92,6 @@ if ($quadratzahl == 1){
 			}
 		}
 	?>
-	<p><button onclick="window.location.reload()">Nächste Aufgabe</button></p>
 </div>
 </body>
 </html>
