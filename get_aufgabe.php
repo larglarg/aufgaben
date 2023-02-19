@@ -7,6 +7,7 @@
 	<title>Aufgabe</title>
 </head>
 <body>
+<div id="form">
 <form action="check.php" method="post">
 <?php
     // Verbindung zur Datenbank herstellen
@@ -50,6 +51,6 @@
 		<br><br>
 		<input type="submit" value="Absenden">
 	</form>
-
+</div>
 </body>
 </html>

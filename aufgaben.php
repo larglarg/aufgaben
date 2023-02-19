@@ -7,7 +7,7 @@
 	<title>Aufgabengenerator</title>
 </head>
 <body>
-<div class="Formulare">
+<div id="form">
 	<h1>Aufgabengenerator</h1>
 	<form action="generate_tasks.php" method="post">
 		<label for="number_of_tasks">Anzahl der Aufgaben:</label>

@@ -354,10 +354,12 @@ function decimalPlaces($number) {
     <title>Erstellt!</title>
 </head>
 <body>
+<div id="form">
 <form>
     <h1>Die Aufgaben wurden erfolgreich erstellt.</h1>
     <a href = "aufgaben.php"><button  type="button">Weitere aufgaben erstellen</button></a>
     <a href = "select_level.php"><button  type="button">Zur Level Auswahl</button></a>
 </form>
+</div>
 </body>
 </html>

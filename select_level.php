@@ -6,6 +6,7 @@
 	<title>Level Auswahl</title>
 </head>
 <body>
+<div id="form">
 <form action="get_aufgabe.php" method="post">
 	<h1>Level Auswahl</h1>
 
@@ -19,6 +20,6 @@
 		<br><br>
 		<input type="submit" value="Erste Aufgabe">
 	</form>
-
+</div>
 </body>
 </html>

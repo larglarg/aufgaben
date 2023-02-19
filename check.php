@@ -7,6 +7,7 @@
 	<title>Aufgabe</title>
 </head>
 <body>
+<div id="form">
 <form action="get_aufgabe.php" method="post">
 <h1>Lösung:</h1>
 
@@ -57,6 +58,7 @@
 		<input type="submit" value="Nächste Aufgabe"> 
         <a href = "aufgaben.php"><button  type="button">Weitere aufgaben erstellen</button></a>
         </div>
+</div>
 	</form>
    
 </body>

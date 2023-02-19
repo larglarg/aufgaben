@@ -14,6 +14,7 @@
 	<title>setting_einmaleins</title>
 </head>
 <body>
+<div id="form">
 <form action="einmaleins.php" method="post">
 	<h1>Settings einmaleins</h1>
 
@@ -35,6 +36,7 @@
         <br><br>
 		<input type="submit" value="Erste Aufgabe">
 	</form>
+</diV>
 
 </body>
 </html>
