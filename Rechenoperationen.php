@@ -82,48 +82,7 @@
                 }
             </script> 
             <?php 
-            
 
-            
-
-            
-            
-            
-
-/*		?>
-	</div>
-	<label for="answer">Lösung:</label>
-	<input type="hidden" name="max" value="<?php echo $max?>" />
-	<input type="hidden" name="min" value="<?php echo $min?>" />
-	<input type="number" id="answer" name="answer" required autofocus>
-	<div id="nebeneinander">
-	<input type="submit" value="Überprüfen" name="submit">
-</form>
-
-<form action="settings_einmaleins.php" method="post">
-<input type="hidden" name="min" value="<?php echo $max?>" />
-<input type="hidden" name="min" value="<?php echo $max?>" />
-
-	<input type="submit" value="Einstellungen anpassen" name="submit">
-</form>
-		
-	<?php
-		if(isset($_POST['submit'])) {
-			$userAnswer = $_POST['answer'];
-			if($userAnswer == $_POST['num2']*$_POST['num1'] ) {
-				echo "<p>Richtig!</p>";
-			} else {
-                echo "<p>deine anwort war:". $userAnswer."</p>";
-				echo "<p>Die richtige lösung währe:".$_POST['num2']*$_POST['num1']."</p>";
-			}
-		}
-	?>
-</div>
-
-</body>
-</html>
-
-<?php */
 function generate_task($length, $max, $min){
     $zahlen = array();
     $operatioen = array();
