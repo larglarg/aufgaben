@@ -66,7 +66,7 @@
 
 <div class="rectangle">
     <div class="background" style="background-image: url('image2.jpg');"></div>
-    <p>Text 2</p>
+    <a href="Rechenoperationen.php"><p>Rechenoperationen</p></a>
 </div>
 
 <div class="rectangle">
