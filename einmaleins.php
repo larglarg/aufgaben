@@ -45,7 +45,7 @@
 	<input type="hidden" name="max2" value="<?php echo $max2?>" />
 	<input type="hidden" name="min1" value="<?php echo $min1?>" />
 	<input type="hidden" name="min2" value="<?php echo $min2?>" />
-	<input type="hidden" name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?> />
+	<input type="checkbox" hidden name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?> />
 	<input type="number" id="answer" name="answer" required autofocus>
 	<div id="nebeneinander">
 	<input type="submit" value="Überprüfen" name="submit">
@@ -58,7 +58,7 @@
 	<input type="hidden" name="max2" value="<?php echo $max2?>" />
 	<input type="hidden" name="min1" value="<?php echo $min1?>" />
 	<input type="hidden" name="min2" value="<?php echo $min2?>" />
-	<input type="hidden" name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?> />
+	<input type="checkbox" hidden name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?> />
 	<input type="submit" value="Einstellungen anpassen" name="submit">
 </form>
 		
@@ -72,7 +72,7 @@ if ($quadratzahl == true){
 		<input type="hidden" name="max2" value="<?php echo $max2?>" />
 		<input type="hidden" name="min1" value="<?php echo $min1?>" />
 		<input type="hidden" name="min2" value="<?php echo $min2?>" />
-		<input type="hidden" name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?>/>
+		<input type="checkbox" hidden name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?>/>
 		<input type="submit" value="Alle Quadratzahlen" name="submit">
 	</form>
 	</div><br>

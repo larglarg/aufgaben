@@ -49,7 +49,7 @@
 		<input type="hidden" name="max2" value="<?php echo $max2?>" />
 		<input type="hidden" name="min1" value="<?php echo $min1?>" />
 		<input type="hidden" name="min2" value="<?php echo $min2?>" />
-		<input type="hidden" name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?>/>
+		<input type="checkbox" hidden name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?>/>
 		<input type="submit" value="Zurück zu den aufgaben" name="submit">
 	</form>
 	<form action="settings_einmaleins.php" method="post">
@@ -59,7 +59,7 @@
 		<input type="hidden" name="max2" value="<?php echo $max2?>" />
 		<input type="hidden" name="min1" value="<?php echo $min1?>" />
 		<input type="hidden" name="min2" value="<?php echo $min2?>" />
-		<input type="hidden" name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?> />
+		<input type="checkbox" hidden name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?> />
 		<input type="submit" value="Zurück zu den Einstellungen" name="submit">
 	</form>
 		</div>
