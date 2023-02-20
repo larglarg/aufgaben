@@ -16,16 +16,25 @@
 				$max2 = $_POST['max2'];
 				$min1 = $_POST['min1'];
 				$min2 = $_POST['min2'];
+                $quadratzahl = $_POST['quadratzahl'];
 			}else {
 				$max1 = 100;
 				$max2 = 100;
-				$max1 = -100;
+				$min1 = -100;
 				$min2 = -100;
+                $quadratzahl = false;
 			}
 			if ($max1 == $min1*-1){
-				$min1 = 0;
+				$num = 0;
+			}else{
+				$num = $min1;
 			}
-			$num = $min1;
+			if(empty($_POST['quadratzahl'])){
+                echo "checked";
+            }else{
+                echo "checked2";
+            }
+			
 			echo "<table>";
 			echo "<td>Basis zahl</td><td>ergebniss</td>";
             while (true){
@@ -45,7 +54,7 @@
 		<input type="hidden" name="max2" value="<?php echo $max2?>" />
 		<input type="hidden" name="min1" value="<?php echo $min1?>" />
 		<input type="hidden" name="min2" value="<?php echo $min2?>" />
-		<input type="hidden" name="quadratzahl" value="<?php echo $quadratzahl?>"/>
+		<input type="hidden" name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?>/>
 		<input type="submit" value="Zurück zu den aufgaben" name="submit">
 	</form>
 	<form action="settings_einmaleins.php" method="post">
@@ -55,7 +64,7 @@
 		<input type="hidden" name="max2" value="<?php echo $max2?>" />
 		<input type="hidden" name="min1" value="<?php echo $min1?>" />
 		<input type="hidden" name="min2" value="<?php echo $min2?>" />
-		<input type="hidden" name="quadratzahl" value="<?php echo $quadratzahl?>"/>
+		<input type="hidden" name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?> />
 		<input type="submit" value="Zurück zu den Einstellungen" name="submit">
 	</form>
 		</div>
