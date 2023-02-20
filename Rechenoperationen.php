@@ -20,8 +20,8 @@
                 $lengthmin = $_POST['lengthmin'];
                 $lengthmax = $_POST['lengthmax'];
 			}else {
-				$max = 1000;
-				$min = -1000;
+				$max = 100;
+				$min = -100;
                 $lengthmin = 4;
                 $lengthmax = 6;
 			}

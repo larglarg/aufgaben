@@ -44,7 +44,6 @@
         <br><br>
         <label for="quadratzahl">Quadratzahlen üben?</label>
 		<input type="checkbox" name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?>/>
-
         <br><br>
 		<input type="submit" value="Erste Aufgabe">
 	</form>
