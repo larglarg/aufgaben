@@ -10,7 +10,7 @@
 	<h1>Liste alle vorkommenden quadratzahlen</h1>
 <?php
 			if (!empty($_POST['max1'])){
-				//wenn eins nicht gsetzt ist wird beides nicht gesetzt sein.
+				//wenn eins nicht gsetzt ist wird alles nicht gesetzt sein.
 
 				$max1 = $_POST['max1'];
 				$max2 = $_POST['max2'];
@@ -29,11 +29,6 @@
 			}else{
 				$num = $min1;
 			}
-			if(empty($_POST['quadratzahl'])){
-                echo "checked";
-            }else{
-                echo "checked2";
-            }
 			
 			echo "<table>";
 			echo "<td>Basis zahl</td><td>ergebniss</td>";

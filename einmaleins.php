@@ -13,7 +13,7 @@
 		<?php
 			
 			if (!empty($_POST['max1'])){
-				//wenn eins nicht gsetzt ist wird beides nicht gesetzt sein.
+				//wenn eins nicht gsetzt ist wird alles nicht gesetzt sein.
 
 				$max1 = $_POST['max1'];
 				$max2 = $_POST['max2'];
@@ -75,6 +75,7 @@ if ($quadratzahl == true){
 		<input type="hidden" name="quadratzahl" <?php if($quadratzahl == true){echo "checked='checked'";} else {echo "checked";}?>/>
 		<input type="submit" value="Alle Quadratzahlen" name="submit">
 	</form>
+	</div><br>
 <?php
 }
 ?>
@@ -92,6 +93,6 @@ if ($quadratzahl == true){
 		}
 	?>
 </div>
-	</div>
+
 </body>
 </html>

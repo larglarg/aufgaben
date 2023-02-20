@@ -1,7 +1,7 @@
 
 <?php
 			if (!empty($_POST['max1'])){
-				//wenn eins nicht gsetzt ist wird beides nicht gesetzt sein.
+				//wenn eins nicht gsetzt ist wird alles nicht gesetzt sein.
 
 				$max1 = $_POST['max1'];
 				$max2 = $_POST['max2'];
