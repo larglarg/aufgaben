@@ -37,7 +37,7 @@
 		?>
 	</div>
 
-	
+
 
 	<label for="answer">Lösung:</label>
     <input type="hidden" name="num2" value="<?php echo $num2?>" />
@@ -48,7 +48,7 @@
 	<input type="hidden" name="min2" value="<?php echo $min2?>" />
 	<input type="hidden" name="quadratzahl" value="<?php echo $quadratzahl?>"/>
 	<input type="number" id="answer" name="answer" required autofocus>
-
+	<div id="nebeneinander">
 	<input type="submit" value="Überprüfen" name="submit">
 </form>
 
@@ -93,5 +93,6 @@ if ($quadratzahl == 1){
 		}
 	?>
 </div>
+	</div>
 </body>
 </html>
